@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LatihanAPI_Batik</string>
+    <string name="no_records_available">No Records Available</string>
+    <string name="batik_image">Batik Image</string>
+    <string name="batik_name">Batik Name</string>
+    <string name="batik_region">Batik Region</string>
+    <string name="batik_price">Batik Price</string>
+    <string name="batik_description">Batik Description</string>
+</resources>

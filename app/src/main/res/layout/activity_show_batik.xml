@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowBatik">
+
+    <ImageView
+        android:id="@+id/detaillayout_image"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/batik_image"
+        android:layout_gravity="top|center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="500dp"
+        android:background="@drawable/detail_background"
+        android:layout_marginTop="250dp"
+        android:layout_gravity="top">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layoutPadding">
+
+            <TextView
+                android:id="@+id/detaillayout_name"
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/batik_name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detaillayout_region"
+                style="?attr/textAppearanceBody2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detaillayout_name"
+                android:text="@string/batik_region"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/detaillayout_minprice"
+                style="?attr/textAppearanceBody2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detaillayout_region"
+                android:layout_alignParentStart="true"
+                android:text="Minimum Price"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/detaillayout_maxprice"
+                style="?attr/textAppearanceBody2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detaillayout_region"
+                android:layout_alignBaseline="@id/detaillayout_minprice"
+                android:layout_alignParentEnd="true"
+                android:text="Maximum Price"
+                android:layout_marginBottom="12dp"/>
+
+            <ImageView
+                android:id="@+id/detaillayout_divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/cream_dark"
+                android:layout_below="@id/detaillayout_minprice"
+                android:layout_marginVertical="8dp"
+                android:contentDescription="Divider" />
+
+            <TextView
+                android:id="@+id/detaillayout_title_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detaillayout_divider"
+                style="?attr/textAppearanceCaption"
+                android:text="The Meaning of Batik"
+                android:layout_marginVertical="4dp"/>
+
+            <TextView
+                android:id="@+id/detaillayout_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?attr/textAppearanceCaption"
+                android:textColor="@color/black"
+                android:text="@string/batik_description"
+                android:layout_marginBottom="@dimen/layoutPadding"
+                android:layout_below="@id/detaillayout_title_desc"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:id="@+id/summarylayout_container">
+
+        <ImageView
+            android:id="@+id/summarylayout_image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:contentDescription="@string/batik_image"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/summarylayout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="40dp"
+            android:textStyle="bold"
+            style="?attr/textAppearanceSubtitle1"
+            android:text="@string/batik_name"
+            android:layout_below="@id/summarylayout_image"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/summarylayout_region"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            style="?attr/textAppearanceBody2"
+            android:text="@string/batik_region"
+            android:layout_below="@id/summarylayout_name" />
+
+        <TextView
+            android:id="@+id/summarylayout_price"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            style="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:text="@string/batik_price"
+            android:layout_below="@id/summarylayout_region"
+            android:layout_marginTop="4dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
