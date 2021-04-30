@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<BatikModel>>?, t: Throwable) {
+                //TODO : Expected BEGIN_ARRAY but was BEGIN_OBJECT
                 Toast.makeText(this@MainActivity, "Data downloading is failed.", Toast.LENGTH_SHORT).show()
                 Log.d("showRecord onFailure", t.message.toString())
             }
