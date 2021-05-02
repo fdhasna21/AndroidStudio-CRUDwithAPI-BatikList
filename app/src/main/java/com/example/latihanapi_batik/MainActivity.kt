@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
     private fun showRecords(){
         batik_recycler.layoutManager = GridLayoutManager(this@MainActivity,2)
         val apiInterface : ApiInterface = ApiClient().getApiClient()!!.create(ApiInterface::class.java)
-        apiInterface.getData().enqueue(object : Callback<ArrayList<BatikModel>> {
-            override fun onResponse(call: Call<ArrayList<BatikModel>>?, response: Response<ArrayList<BatikModel>>?) {
+        apiInterface.getData().enqueue(object : Callback<BatikResponse> {
+            override fun onResponse(call: Call<BatikResponse>?, response: Response<BatikResponse>?) {
                 val outputArray = response?.body()!!
-                if(outputArray.size > 0){
+                if(outputArray.data.size > 0){
                     txt_noRecords.visibility = View.GONE
                     batik_recycler.visibility = View.VISIBLE
-                    batik_recycler.adapter = BatikAdapter(outputArray, this@MainActivity)
+                    batik_recycler.adapter = BatikAdapter(outputArray.data, this@MainActivity)
                 }
                 else{
                     txt_noRecords.visibility = View.VISIBLE
@@ -33,8 +33,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("showRecord onResponse", response.toString())
             }
 
-            override fun onFailure(call: Call<ArrayList<BatikModel>>?, t: Throwable) {
-                //TODO : Expected BEGIN_ARRAY but was BEGIN_OBJECT
+            override fun onFailure(call: Call<BatikResponse>?, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Data downloading is failed.", Toast.LENGTH_SHORT).show()
                 Log.d("showRecord onFailure", t.message.toString())
             }
@@ -44,6 +43,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar!!.setTitle("Batik Indonesia")
+
         showRecords()
     }
 }

@@ -5,7 +5,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:elevation="4dp"
+    android:id="@+id/summarylayout_container">
 
 
     <RelativeLayout
@@ -13,8 +15,7 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
         android:gravity="center"
-        android:padding="12dp"
-        android:id="@+id/summarylayout_container">
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/summarylayout_image"
